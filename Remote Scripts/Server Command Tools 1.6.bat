@@ -1,10 +1,10 @@
 @echo off
-:: Server Command Tools 1.5
+:: Server Command Tools 1.6
 :: https://github.com/Justin-Lund/
 
 :Start
 cls
-title Server Command Tools 1.5
+title Server Command Tools 1.6
 
 
 echo 1. Find User Account Information
@@ -15,12 +15,12 @@ echo 5. Ping a Computer
 echo 6. Launch Active Directory
 echo 7. Launch CMRC
 echo 8. Launch CMD
-echo 9. Exit Server Command Tools
+echo 9. Launch PowerShell
 echo.
 
 CHOICE /C 123456789 /M "Enter your choice:"
 
-IF ERRORLEVEL 9 GOTO Exit
+IF ERRORLEVEL 9 GOTO LaunchPowerShell
 IF ERRORLEVEL 8 GOTO CMD
 IF ERRORLEVEL 7 GOTO CMRC
 IF ERRORLEVEL 6 GOTO ActiveDirectory
@@ -125,5 +125,9 @@ start
 GOTO Start
 
 
-:Exit
-exit
+:LaunchPowerShell
+cls
+title Launching PowerShell
+start PowerShell
+
+GOTO Start
