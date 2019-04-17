@@ -120,7 +120,7 @@ GOTO Start
 :CMD
 cls
 title Launching CMD
-start cmd /k "doskey ls=dir & doskey clear=cls"
+start cmd /k "doskey ls=dir $* & doskey clear=cls"
 
 GOTO Start
 
