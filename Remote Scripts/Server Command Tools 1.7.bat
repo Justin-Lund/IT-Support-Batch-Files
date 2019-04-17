@@ -1,10 +1,10 @@
 @echo off
-:: Server Command Tools 1.6
+:: Server Command Tools 1.7
 :: https://github.com/Justin-Lund/
 
 :Start
 cls
-title Server Command Tools 1.6
+title Server Command Tools 1.7
 
 
 echo 1. Find User Account Information
@@ -120,7 +120,7 @@ GOTO Start
 :CMD
 cls
 title Launching CMD
-start
+start cmd /k "doskey ls=dir & doskey clear=cls"
 
 GOTO Start
 
