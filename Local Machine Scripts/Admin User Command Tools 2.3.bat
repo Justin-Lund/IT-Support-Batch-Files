@@ -1,10 +1,10 @@
 @echo off
-:: Admin User Command Tools 2.2
+:: Admin User Command Tools 2.3
 :: https://github.com/Justin-Lund/
 
 :Start
 cls
-title Admin User Command Tools 2.2
+title Admin User Command Tools 2.3
 c:
 cd\
 
@@ -83,7 +83,7 @@ ipconfig /release
 cls
 echo I.P. Address Released
 
-timeout /t 5
+timeout /t 8
 cls
 
 echo Renewing I.P. Address
@@ -135,6 +135,7 @@ net stop spooler
 
 echo Yes|del c:\windows\system32\spool\printers\*
 echo.
+reg DELETE "HKLM\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64\Drivers\Version-3\Xerox Global Print Driver PCL6" /f /va
 
 net start spooler
 
@@ -330,6 +331,7 @@ echo.
 echo Releasing I.P. Address
 echo.
 echo ************************************************
+echo.
 
 ipconfig /release
 echo.
@@ -343,7 +345,7 @@ echo.
 echo ************************************************
 
 echo.
-timeout /t 5
+timeout /t 8
 cls
 
 echo ************************************************
@@ -399,7 +401,33 @@ echo.
 echo TCP/IP Reset
 echo.
 echo ************************************************
+echo.
 
+cls
+
+echo ************************************************
+echo.
+echo Clearing Printer Cache
+echo.
+echo ************************************************
+echo.
+
+echo Stopping Print Spool service
+net stop spooler
+
+echo Yes|del c:\windows\system32\spool\printers\*
+echo.
+reg DELETE "HKLM\SYSTEM\CurrentControlSet\Control\Print\Environments\Windows x64\Drivers\Version-3\Xerox Global Print Driver PCL6" /f /va
+
+net start spooler
+
+cls
+
+echo ************************************************
+echo.
+echo Printer Cache Cleared
+echo.
+echo ************************************************
 echo.
 
 echo Forcing Group Policy Update
@@ -408,8 +436,8 @@ echo ************************************************
 echo.
 
 echo n|gpupdate /force
+cls
 
-echo.
 echo ************************************************
 echo.
 echo Group Policy Update Completed
