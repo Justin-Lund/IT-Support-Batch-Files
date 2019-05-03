@@ -83,7 +83,7 @@ ipconfig /release
 cls
 echo I.P. Address Released
 
-timeout /t 5
+timeout /t 8
 cls
 
 echo Renewing I.P. Address
@@ -323,7 +323,7 @@ echo.
 echo ************************************************
 
 echo.
-timeout /t 5
+timeout /t 8
 cls
 
 echo ************************************************
