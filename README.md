@@ -90,8 +90,7 @@ Functions:
 * Force a group policy update (only works for computer policy, not user policy)
 * Restart printer spooler & clear local printer cache
 * Pull a list of all installed programs on a remote computer, and write it to C:\Temp\InstallList.txt on your local computer
-
-The latter writes the output to a file instead of within the command prompt so that it can be searched easier (using Ctrl + F in Notepad)
+* Fix failing SCCM Software Center updates on a user's computer by stopping the services wuauserv & ccmexec, clearing out C:\Windows\SoftwareDistribution and restarting the services
 
 _______________________
 
